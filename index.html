@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>八卦</title>
+    <style>
+        body {
+            background: #f0f4fc;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        @keyframes x {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #gossip-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #gossip {
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            animation: x 10s linear infinite;
+            box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75)
+        }
+
+        #gossip>* {
+            position: absolute;
+        }
+
+        #gossip>div:nth-child(odd) {
+            background: black;
+        }
+
+        #gossip>div:nth-child(even) {
+            background: white;
+        }
+
+        #gossip>div:nth-child(n+3) {
+            border-radius: 50%;
+        }
+
+        #gossip>div:first-child {
+            height: 100%;
+            width: 50%;
+            left: 0;
+        }
+
+        #gossip>div:nth-child(2) {
+            height: 100%;
+            width: 50%;
+            right: 0;
+        }
+
+        #gossip>div:nth-child(3) {
+            height: 200px;
+            width: 200px;
+            left: 50%;
+            margin-left: -100px;
+        }
+
+
+        #gossip>div:nth-child(4) {
+            height: 200px;
+            width: 200px;
+            left: 50%;
+            bottom: 0;
+            margin-left: -100px;
+        }
+
+        #gossip>div:nth-child(5) {
+            height: 50px;
+            width: 50px;
+            left: 50%;
+            bottom: 75px;
+            margin-left: -25px;
+        }
+
+        #gossip>div:nth-child(6) {
+            height: 50px;
+            width: 50px;
+            left: 50%;
+            top: 75px;
+            margin-left: -25px;
+        }
+
+        @media (max-width: 500px) {
+            #gossip {
+                width: 200px;
+                height: 200px;
+            }
+
+            #gossip>div:nth-child(3) {
+                width: 100px;
+                height: 100px;
+                margin-left: -50px;
+            }
+
+            #gossip>div:nth-child(4) {
+                width: 100px;
+                height: 100px;
+                margin-left: -50px;
+            }
+
+            #gossip>div:nth-child(5) {
+                width: 25px;
+                height: 25px;
+                bottom: 37.5px;
+                margin-left: -12.5px;
+            }
+
+            #gossip>div:nth-child(6) {
+                width: 25px;
+                height: 25px;
+                top: 37.5px;
+                margin-left: -12.5px;
+            }
+        }
+
+        #gossip-desc {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gossip-wrapper">
+        <div id="gossip">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="gossip-desc">
+            得道者多助，失道者寡助
+        </div>
+    </div>
+</body>
+
+</html>
